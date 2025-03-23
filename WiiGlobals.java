@@ -20,7 +20,7 @@ public class WiiGlobals extends GhidraScript {
     public void run() throws Exception {
         Memory memory = currentProgram.getMemory();
 
-        addAnnotation(memory, 0x80000000, "g_game_code", new CharDataType(),
+        addAnnotation(memory, 0x80000000, "g_game_code", new ArrayDataType(new CharDataType(), 4),
             "Game Code 'RSPE' (Wii Sports)");
         addAnnotation(memory, 0x80000004, "g_maker_code", new UnsignedShortDataType(),
             "Maker code");
