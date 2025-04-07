@@ -38,6 +38,7 @@ public class WiiRevolutionOSStructs extends GhidraScript {
         struct.add(QWordDataType.dataType, "fpscr", "0x190");
         struct.add(DWordDataType.dataType, "srr0", "0x198 - saved PC");
         struct.add(DWordDataType.dataType, "srr1", "0x19c - saved MSR");
+        struct.add(WordDataType.dataType, "unknown1", "0x1a0 - unknown");
         struct.add(WordDataType.dataType, "state", "0x1a2; last bit means OSSaveFPUContext was called, second last bit means the GPRs were saved by the exception handler");
         struct.add(new ArrayDataType(QWordDataType.dataType, 4, QWordDataType.dataType.getLength()), "gqrs", "0x1a4");
         struct.add(new ArrayDataType(QWordDataType.dataType, 0x20, QWordDataType.dataType.getLength()), "pairedSingles", "starting at 0x1c8");
